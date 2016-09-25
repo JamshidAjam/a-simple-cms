@@ -1,4 +1,26 @@
 .login {
 	text-align: center;
-	
+	width: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #e8e8e8;
+	border: 1px solid #b3b3b3;
+	border-radius: 3px;
+}
+
+.login input {
+	width: 270px;
+	padding: 5px;
+	margin: 5px;
+}
+.login input[type=submit] {
+	width: 170px;
+	color: #fff;
+	background-color: #008300;
+	border: none;
+	border-radius: 3px;
+}
+.login input[type=submit]:hover {
+	cursor: pointer;
+	background-color: #005a00;
 }
