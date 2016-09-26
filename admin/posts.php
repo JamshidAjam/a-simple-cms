@@ -47,7 +47,7 @@ if(!isset($_SESSION['admin_logged_in'])) {
 				
 				<tr>
 					<td><?php echo $row['post_title'] ?></td>
-					<td><a href="#">edit</a></td>
+					<td><a href="edit-post.php?post-id=<?php echo $row['id'] ?>">edit</a></td>
 					<td><a href="#">delete</a></td>
 				</tr>
 	
