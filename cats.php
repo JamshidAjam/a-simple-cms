@@ -41,7 +41,7 @@ global $db;
 					<tr>
 						<td><?php echo $row['cat_name'] ?></td>
 						<td><a href="edit-cat.php?cat-id=<?php echo $row['id'] ?>">edit</a></td>
-						<td><a href="#">delete</a></td>
+						<td><a href="actions/cat-delete.php?cat-id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">delete</a></td>
 					</tr>
 
 				<?php
