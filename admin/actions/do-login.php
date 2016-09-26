@@ -11,7 +11,7 @@ $check_admin = mysqli_query($db, "SELECT * FROM admin WHERE admin_username='$use
 if (mysqli_num_rows($check_admin) > 0) {
 	session_start();
 	$_SESSION[admin_logged_in] = 1;
-	header('Location: ../admin.php');
+	header('Location: ../index.php');
 } else {
 	echo "Username or password wasen't correct!";
 }

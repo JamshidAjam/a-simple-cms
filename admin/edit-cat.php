@@ -15,7 +15,7 @@ global $db;
 	<h2>Admin center</h2>
 	<div class="top-menu">
 		<ul>
-			<li><a href="admin.php">Main page</a></li>
+			<li><a href="index.php">Main page</a></li>
 			<li><a href="#">Posts</a></li>
 			<li><a href="#">Categories</a></li>
 			<li><a href="#">Log out</a></li>

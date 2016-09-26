@@ -42,6 +42,13 @@
 .admin table a:hover {
 	color: #1c4968;
 }
+.admin a {
+	color: #358ac8;
+	text-decoration: none;
+}
+.admin a:hover {
+	color: #1c4968;
+}
 
 /*==== admin page ======*/
 .admin {
@@ -81,16 +88,33 @@
 }
 
 /*======== admin add cat ========*/
-.cat-setting {
+.setting {
 	margin-top: 10px;
 	border-bottom: 2px solid #ccc;
 	padding-bottom: 10px;
 }
-.cat-setting input {
+.setting input {
 	padding: 5px;
 }
-.cat-setting input[type=submit] {
+.setting input[type=submit] {
 	padding: 0;
 	cursor: pointer;
 }
 
+.post {
+	margin-top: 10px;
+}
+.post input, .post select {
+	width: 400px;
+	padding: 5px;
+	margin: 5px;
+}
+.post textarea {
+	width: 400px;
+	resize: none;
+}
+.post input[type=submit] {
+	padding: 5px;
+	cursor: pointer;
+	width: 130px;
+}

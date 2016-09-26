@@ -14,13 +14,13 @@ global $db;
 	<h2>Admin center</h2>
 	<div class="top-menu">
 		<ul>
-			<li><a href="admin.php">Main page</a></li>
-			<li><a href="#">Posts</a></li>
+			<li><a href="index.php">Main page</a></li>
+			<li><a href="posts.php">Posts</a></li>
 			<li><a href="#">Categories</a></li>
 			<li><a href="#">Log out</a></li>
 		</ul>
 	</div>
-	<div class="cat-setting">
+	<div class="setting">
 		<form action="actions/add-new-cat.php" method="post">
 			<input type="text" name="cat-name" placeholder="new category name">
 			<input type="submit" value="Add new category">

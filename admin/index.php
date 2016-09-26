@@ -3,7 +3,7 @@
 session_start();
 
 if(!isset($_SESSION['admin_logged_in'])) {
-	header('Location: login.php');
+	header('Location: index.php');
 }
 
 ?>
@@ -21,7 +21,7 @@ if(!isset($_SESSION['admin_logged_in'])) {
 	<div class="top-menu">
 		<ul>
 			<li><a href="#">Main page</a></li>
-			<li><a href="#">Posts</a></li>
+			<li><a href="posts.php">Posts</a></li>
 			<li><a href="cats.php">Categories</a></li>
 			<li><a href="#">Log out</a></li>
 		</ul>
