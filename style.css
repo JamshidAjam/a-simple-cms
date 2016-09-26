@@ -1,3 +1,4 @@
+/*=== login page =====*/
 .login {
 	text-align: center;
 	width: 300px;
@@ -23,4 +24,21 @@
 .login input[type=submit]:hover {
 	cursor: pointer;
 	background-color: #005a00;
+}
+
+/*==== admin page ======*/
+.admin {
+	text-align: center;
+	width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #f4f4f4;
+	border: 1px solid #b3b3b3;
+	border-radius: 2px;
+}
+.admin h2 {
+	padding: 0 0 5px 0;
+	margin: 0;
+	font-size: 20px;
+	border-bottom: 2px solid #ccc;
 }
