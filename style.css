@@ -26,6 +26,23 @@
 	background-color: #005a00;
 }
 
+/*=========== admin table ========*/
+.admin table {
+	width: 400px;
+	margin: 10px auto;
+}
+.admin table tr td {
+	border: 1px solid #484848;
+	padding: 5px;
+}
+.admin table a {
+	color: #358ac8;
+	text-decoration: none;
+}
+.admin table a:hover {
+	color: #1c4968;
+}
+
 /*==== admin page ======*/
 .admin {
 	text-align: center;
@@ -64,13 +81,15 @@
 }
 
 /*======== admin add cat ========*/
-.add-cat {
+.cat-setting {
 	margin-top: 10px;
+	border-bottom: 2px solid #ccc;
+	padding-bottom: 10px;
 }
-.add-cat input {
+.cat-setting input {
 	padding: 5px;
 }
-.add-cat input[type=submit] {
+.cat-setting input[type=submit] {
 	padding: 0;
 	cursor: pointer;
 }
