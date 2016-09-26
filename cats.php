@@ -17,7 +17,7 @@
 		</ul>
 	</div>
 	<div class="add-cat">
-		<form action="" method="post">
+		<form action="actions/add-new-cat.php" method="post">
 			<input type="text" name="cat-name" placeholder="new category name">
 			<input type="submit" value="Add new category">
 		</form>
