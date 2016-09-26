@@ -7,7 +7,7 @@
 <body>
 
 	<div class="login">
-		<form action="" method="post">
+		<form action="actions/do-login.php" method="post">
 			<input type="text" name="username" placeholder="User Name"><br>
 			<input type="password" name="password" placeholder="******"><br>
 			<input type="submit" name="login" value="Log in">
