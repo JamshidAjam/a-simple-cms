@@ -118,3 +118,21 @@
 	cursor: pointer;
 	width: 130px;
 }
+
+.comment-item {
+	border: 1px solid #aeaeae;
+	border-radius: 3px;
+	margin: 5px;
+	padding: 5px;
+	text-align: left;
+}
+.comment-item .comment-username {
+	font-size: 18px;
+}
+.comment-item .comment {
+	font-size: 20px;
+}
+
+.comment-item .comment-post-name {
+	font-size: 12px
+}

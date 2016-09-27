@@ -22,6 +22,7 @@ if(!isset($_SESSION['admin_logged_in'])) {
 		<ul>
 			<li><a href="#">Main page</a></li>
 			<li><a href="posts.php">Posts</a></li>
+			<li><a href="comments.php">Comments</a></li>
 			<li><a href="cats.php">Categories</a></li>
 			<li><a href="#">Log out</a></li>
 		</ul>
