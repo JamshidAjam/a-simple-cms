@@ -46,6 +46,13 @@ if(!isset($_SESSION['admin_logged_in'])) {
 				?>
 			</div>
 			<div class="comment"><?php echo $row['comment'] ?></div>
+			<div class="comment-setting">
+				<ul>
+					<li><a href="#">confirm comments</a></li>
+					<li><a href="#">add answer</a></li>
+					<li><a href="#">delete comment</a></li>
+				</ul>
+			</div>
 		</div>
 		<?php
 			}

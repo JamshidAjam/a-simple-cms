@@ -136,3 +136,11 @@
 .comment-item .comment-post-name {
 	font-size: 12px
 }
+
+.comment-item .comment-setting ul li {
+	padding: 0;
+	margin: 0;
+}
+.comment-item .comment-setting ul li {
+	display: inline-block;
+}

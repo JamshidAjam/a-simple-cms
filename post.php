@@ -74,7 +74,7 @@ $post = mysqli_fetch_assoc($get_post);
 	<div class="comments">
 		<div class="show-comments">
 				<?php 
-					$get_comments = mysqli_query($db, "SELECT* FROM comments WHERE post_id=$post_id");
+					$get_comments = mysqli_query($db, "SELECT* FROM comments WHERE post_id=$post_id AND is_confirm=1");
 					while ($row = mysqli_fetch_assoc($get_comments)) {
 				?>
 			<div class="comment-item">
