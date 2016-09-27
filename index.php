@@ -18,66 +18,32 @@ global $db;
 	<h1><?php echo constant('MY_BLOG_NAME') ?></h1>
 
 	<div class="content">
+
+		<?php
+			$get_posts = mysqli_query($db, "SELECT * FROM posts ORDER BY id DESC");
+			while ($row = mysqli_fetch_assoc($get_posts)) {
+		?>
+
 		<div class="post">
-			<div class="post-title">leaen php &amp; mysql</div>
-			<div class="post-cat">categories: learning</div>
-			<div class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<div class="post-title"><?php echo $row['post_title'] ?></div>
+			<div class="post-cat">Category: 
+			
+				<?php
+					$post_cat = $row['post_cat'];
+					$get_cat_name = mysqli_query($db, "SELECT * FROM cats WHERE id=$post_cat");
+					$get_name = mysqli_fetch_assoc($get_cat_name);
+					echo $get_name['cat_name'];
+				?>
+				
+			</div>
+			<div class="post-text"><?php echo $row['post_text'] ?></div>
 		</div>
-		<div class="post">
-			<div class="post-title">leaen php &amp; mysql</div>
-			<div class="post-cat">categories: learning</div>
-			<div class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-		</div>
-		<div class="post">
-			<div class="post-title">leaen php &amp; mysql</div>
-			<div class="post-cat">categories: learning</div>
-			<div class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-		</div>
-		<div class="post">
-			<div class="post-title">leaen php &amp; mysql</div>
-			<div class="post-cat">categories: learning</div>
-			<div class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-		</div>
-		<div class="post">
-			<div class="post-title">leaen php &amp; mysql</div>
-			<div class="post-cat">categories: learning</div>
-			<div class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-		</div>
-		<div class="post">
-			<div class="post-title">leaen php &amp; mysql</div>
-			<div class="post-cat">categories: learning</div>
-			<div class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-		</div>
+		<?php
+
+		}
+
+		?>
+
 	</div>
 	<div class="sidebar">
 		<h3>Categories</h3>
@@ -91,6 +57,17 @@ global $db;
 					<?php
 				}
 
+			?>
+		</ul>
+		<h3>Latest Articles</h3>
+		<ul>
+			<?php
+				$get_three_posts = mysqli_query($db, "SELECT * FROM posts ORDER BY id DESC LIMIT 3");
+				while ($row = mysqli_fetch_assoc($get_three_posts)) {
+			?>
+			<li><?php echo $row['post_title'] ?></li>
+			<?php
+				}
 			?>
 		</ul>
 	</div>
