@@ -68,6 +68,21 @@ $post = mysqli_fetch_assoc($get_post);
 			?>
 		</ul>
 	</div>
+
+	<div style="clear: both;"></div>
+
+	<div class="comments">
+		<div class="show-comments">Comments</div>
+		<div class="add-comment">
+			<form action="" method="post">
+				<input type="text" name="username" placeholder="Your username">
+				<input type="email" name="email" placeholder="Your email">
+				<textarea name="comment" cols="30" rows="10" placeholder="Your comment"></textarea><br>
+				<input type="submit" value="Add comment">
+			</form>
+		</div>
+	</div>
+
 </div>
 
 
