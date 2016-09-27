@@ -3,6 +3,13 @@ body {
 	margin: 0;
 }
 
+h1 a {
+	text-decoration: none;
+	color: #1c4968;
+}
+h1 a:hover {
+	color: #3258bd;
+}
 #container {
 	width: 900px;
 	margin: 0 auto;
@@ -23,6 +30,13 @@ body {
 	border: 1px solid #b3b3b3;
 	border-radius: 3px;
 }
+.sidebar a {
+	color: #1c4968;
+	text-decoration: none;
+}
+.sidebar a:hover {
+	color: #3258bd;
+}
 .sidebar h3 {
 	padding: 10px 0 0 10px;
 	margin: 0;
@@ -33,6 +47,13 @@ body {
 
 .post {
 	padding: 5px;
+}
+.post a{
+	color: #1c4968;
+	text-decoration: none;
+}
+.post a:hover{
+	color: #3258bd;
 }
 .post .post-title {
 	font-size: 25px;

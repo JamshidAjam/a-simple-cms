@@ -3,46 +3,43 @@
 require_once 'admin/actions/db.php';
 global $db;
 
+$post_id = $_GET['post-id'];
+$get_post = mysqli_query($db, "SELECT * FROM posts WHERE id=$post_id");
+$post = mysqli_fetch_assoc($get_post);
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo constant('MY_BLOG_NAME') ?></title>
+	<title><?php echo $post['post_title'] ?></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <div id="container">
 
-	<h1><a href="#"><?php echo constant('MY_BLOG_NAME') ?></a></h1>
+	<h1><a href="index.php"><?php echo constant('MY_BLOG_NAME') ?></a></h1>
 
 	<div class="content">
 
-		<?php
-			$get_posts = mysqli_query($db, "SELECT * FROM posts ORDER BY id DESC");
-			while ($row = mysqli_fetch_assoc($get_posts)) {
-		?>
+		
 
 		<div class="post">
-			<div class="post-title"><a href="post.php?post-id=<?php echo $row['id'] ?>"><?php echo $row['post_title'] ?></a></div>
+			<div class="post-title"><?php echo $post['post_title'] ?></div>
 			<div class="post-cat">Category: 
 			
 				<?php
-					$post_cat = $row['post_cat'];
+					$post_cat = $post['post_cat'];
 					$get_cat_name = mysqli_query($db, "SELECT * FROM cats WHERE id=$post_cat");
 					$get_name = mysqli_fetch_assoc($get_cat_name);
 					echo $get_name['cat_name'];
 				?>
 				
 			</div>
-			<div class="post-text"><?php echo $row['post_text'] ?></div>
+			<div class="post-text"><?php echo $post['post_text'] ?></div>
 		</div>
-		<?php
-
-		}
-
-		?>
+		
 
 	</div>
 	<div class="sidebar">
@@ -72,6 +69,7 @@ global $db;
 		</ul>
 	</div>
 </div>
+
 
 </body>
 </html>
