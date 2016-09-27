@@ -96,3 +96,15 @@ h1 a:hover {
 	margin-left: 5px;
 	cursor: pointer;
 }
+.comment-item {
+	border: 1px solid #aeaeae;
+	border-radius: 3px;
+	margin: 5px;
+	padding: 5px;
+}
+.comment-item .comment-username {
+	font-size: 18px;
+}
+.comment-item .comment {
+	font-size: 12px;
+}

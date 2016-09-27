@@ -72,12 +72,30 @@ $post = mysqli_fetch_assoc($get_post);
 	<div style="clear: both;"></div>
 
 	<div class="comments">
-		<div class="show-comments">Comments</div>
+		<div class="show-comments">
+				<?php 
+					$get_comments = mysqli_query($db, "SELECT* FROM comments WHERE post_id=$post_id");
+					while ($row = mysqli_fetch_assoc($get_comments)) {
+				?>
+			<div class="comment-item">
+				<div class="comment-username"><?php echo $row['user_name'] ?></div>
+				<div class="comment"><?php echo $row['comment'] ?></div>
+			</div>
+				<?php
+					}
+					if (mysqli_num_rows($get_comments) == 0) {
+						?>
+						<div style="text-align: center; margin-top: 5px;">"there is no comment"</div>
+						<?php
+					}
+				?>
+		</div>
 		<div class="add-comment">
-			<form action="" method="post">
+			<form action="actions/add-new-comment.php" method="post">
 				<input type="text" name="username" placeholder="Your username">
 				<input type="email" name="email" placeholder="Your email">
 				<textarea name="comment" cols="30" rows="10" placeholder="Your comment"></textarea><br>
+				<input type="hidden" name="post-id" value="<?php echo $post_id ?>">
 				<input type="submit" value="Add comment">
 			</form>
 		</div>
