@@ -72,6 +72,7 @@ $post = mysqli_fetch_assoc($get_post);
 	<div style="clear: both;"></div>
 
 	<div class="comments">
+		<h3>Comments</h3>
 		<div class="show-comments">
 				<?php 
 					$get_comments = mysqli_query($db, "SELECT* FROM comments WHERE post_id=$post_id AND is_confirm=1");

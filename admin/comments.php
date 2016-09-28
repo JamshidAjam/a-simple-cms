@@ -32,7 +32,7 @@ if(!isset($_SESSION['admin_logged_in'])) {
 		<?php
 			require_once 'actions/db.php';
 			global $db;
-			$get_comments = mysqli_query($db, "SELECT * FROM comments ORDER BY id DESC");
+			$get_comments = mysqli_query($db, "SELECT * FROM comments WHERE is_confirm=0 ORDER BY id DESC");
 			while ($row = mysqli_fetch_assoc($get_comments)) {
 		?>
 		<div class="comment-item">
@@ -48,7 +48,7 @@ if(!isset($_SESSION['admin_logged_in'])) {
 			<div class="comment"><?php echo $row['comment'] ?></div>
 			<div class="comment-setting">
 				<ul>
-					<li><a href="#">confirm comments</a></li>
+					<li><a href="actions/confirm-comment.php?comment-id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">confirm comments</a></li>
 					<li><a href="#">add answer</a></li>
 					<li><a href="#">delete comment</a></li>
 				</ul>
