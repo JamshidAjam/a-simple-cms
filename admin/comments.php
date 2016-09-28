@@ -36,7 +36,9 @@ if(!isset($_SESSION['admin_logged_in'])) {
 			while ($row = mysqli_fetch_assoc($get_comments)) {
 		?>
 		<div class="comment-item">
-			<div class="comment-username"><?php echo $row['user_name'] ?></div>
+			<div class="comment-username"><?php echo $row['user_name'] ?>
+				<span><?php if ($row['answer']!=null) { echo "answerd"; } ?></span>
+			</div>
 			<div class="comment-post-name">
 				<?php 
 					$post_id = $row['post_id'] ;
@@ -49,7 +51,7 @@ if(!isset($_SESSION['admin_logged_in'])) {
 			<div class="comment-setting">
 				<ul>
 					<li><a href="actions/confirm-comment.php?comment-id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">confirm comments</a></li>
-					<li><a href="#">add answer</a></li>
+					<li><a href="add-comment-answer.php?comment-id=<?php echo $row['id'] ?>">add answer</a></li>
 					<li><a href="#">delete comment</a></li>
 				</ul>
 			</div>

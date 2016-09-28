@@ -108,3 +108,9 @@ h1 a:hover {
 .comment-item .comment {
 	font-size: 12px;
 }
+.comment-item .comment-answer {
+	background-color: #007500;
+	padding: 5px;
+	color: #000;
+	margin: 5px;
+}

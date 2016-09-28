@@ -81,6 +81,13 @@ $post = mysqli_fetch_assoc($get_post);
 			<div class="comment-item">
 				<div class="comment-username"><?php echo $row['user_name'] ?></div>
 				<div class="comment"><?php echo $row['comment'] ?></div>
+				<?php 
+					if ($row['answer'] != null) {
+					?>
+						<div class="comment-answer"><span>admin answer:</span><?php echo $row['answer'] ?></div>	
+					<?php 
+					}
+				?>
 			</div>
 				<?php
 					}

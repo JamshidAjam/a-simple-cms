@@ -157,3 +157,19 @@
 	display: inline-block;
 	margin-left: 5px;
 }
+
+.comment-setting textarea {
+	width: 98%;
+	resize: none;
+	padding: 5px;
+	margin: 5px;
+}
+.comment-setting input[type=submit], .comment-setting button {
+	padding: 5px;
+	margin: 5px;
+	cursor: pointer;
+}
+.comment-username span {
+	float: right;
+	color: red;
+}
