@@ -24,7 +24,7 @@ if(!isset($_SESSION['admin_logged_in'])) {
 			<li><a href="posts.php">Posts</a></li>
 			<li><a href="#">Comments</a></li>
 			<li><a href="cats.php">Categories</a></li>
-			<li><a href="#">Log out</a></li>
+			<li><a href="logout.php">Log out</a></li>
 		</ul>
 	</div>
 
@@ -52,7 +52,7 @@ if(!isset($_SESSION['admin_logged_in'])) {
 				<ul>
 					<li><a href="actions/confirm-comment.php?comment-id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">confirm comments</a></li>
 					<li><a href="add-comment-answer.php?comment-id=<?php echo $row['id'] ?>">add answer</a></li>
-					<li><a href="#">delete comment</a></li>
+					<li><a href="actions/delete-comment.php?comment-id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">delete comment</a></li>
 				</ul>
 			</div>
 		</div>
